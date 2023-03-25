@@ -35,26 +35,28 @@ public class StatsService {
     }
 
     public int getMinAverageMonthlySale(int[] sales) {
-        int minAvarageSales = 0;
+        int minAverageSales = 0;
         int months = 0;
+        int averageSales = getAverageSales(sales);
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < 15) {
+            if (sales[i] < averageSales) {
                 months = 1;
-                minAvarageSales += months;
+                minAverageSales += months;
             }
         }
-        return minAvarageSales;
+        return minAverageSales;
     }
 
     public int getMaxAverageMonthlySale(int[] sales) {
-        int maxAvarageSales = 0;
+        int maxAverageSales = 0;
         int months = 0;
+        int averageSales = getAverageSales(sales);
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > 15) {
+            if (sales[i] > averageSales) {
                 months = 1;
-                maxAvarageSales += months;
+                maxAverageSales += months;
             }
         }
-        return maxAvarageSales;
+        return maxAverageSales;
     }
 }
